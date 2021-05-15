@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css-menu</title>
+  <style>
+    body {
+      margin: 0px;
+
+      padding: 0px;
+
+    }
+
+    ul {
+      margin: 0px;
+
+      padding: 0px;
+
+      list-style: none;
+
+    }
+
+    body>ul>li {
+
+      font-size: 30px;
+      display: inline-block;
+
+    }
+
+    li {
+
+      white-space: nowrap;
+
+      position: relative;
+
+    }
+
+    li:hover {
+
+      background-color: pink;
+
+    }
+
+    ul ul {
+
+      position: absolute;
+
+      left: 0px;
+      top: 100%;
+      display: none;
+
+    }
+
+    ul ul ul {
+
+      left: 100%;
+      top: 0;
+    }
+
+    li:hover>ul {
+      display: block;
+
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="menu">
+    <li>小米<ul>
+        <li>小米11</li>
+        <li>小米电视</li>
+        <li>小米周边<ul>
+            <li>移动电源</li>
+            <li>电池</li>
+            <li>扫地机器人</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>苹果<ul>
+        <li>手机<ul>
+            <li>iphone12</li>
+            <li>iphone11</li>
+            <li>iphnoe10</li>
+          </ul>
+        </li>
+        <li>电脑</li>
+        <li>平板电脑</li>
+      </ul>
+    </li>
+    <li>华为<ul>
+        <li>手机</li>
+        <li>路由器</li>
+        <li>手表</li>
+      </ul>
+    </li>
+  </ul>
+</body>
+
+</html>

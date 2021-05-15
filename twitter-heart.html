@@ -1,0 +1,33 @@
+<!DOCTYPE >
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<style>
+  *{
+    margin: 0px;
+    padding: 0px;
+  }
+  label {
+    display: block;
+    xborder: 1px solid red;
+    width: 100px;
+    height:100px;
+    background-image: url(web_heart_animation.png);
+  }
+  input:checked + label{
+    background-position: -2800px;
+    transition: steps(28) 1s ;
+  }
+  input {
+  display: none;
+  }
+
+</style>
+</head>
+<body>
+  <input type="checkbox" id="q">
+  <label for="q">
+  </label>
+</body>  
+</html>

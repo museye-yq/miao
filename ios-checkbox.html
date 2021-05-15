@@ -1,0 +1,46 @@
+<!DOCTYPE >
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+<style>
+div {
+ border: 5px solid #DCDCDC;
+ width: 400px;
+ height: 150px;
+ border-radius: 10em;
+ transition: 2s;
+}
+label {
+  border:5px solid #DCDCDC;
+  background-color: white;
+  display:inline-block;
+  width:130px;
+  height:130px;
+  margin:05px;
+  border-radius: 6em;
+}
+input:checked + div {
+  background-color: rgba(48,243,75);
+  transition: 1s;
+  }
+  input:checked + div > label {
+    margin-left: 255px;
+    transition: 1s ease-in-out;
+  } 
+  input:not(:checked) + div > label {
+    margin: 5px;
+    transition: 1s;
+  }
+#q {
+  display: none;
+}  
+</style>
+</head>
+<body>
+  <input type="checkbox" id="q">
+<div>
+  <label for="q"></label>
+</div>
+</body>
+</html>
