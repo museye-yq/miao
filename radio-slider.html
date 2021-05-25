@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>radio-slider</title>
+</head>
+<style>
+  img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 100%;
+    transition: 2s;
+  }
+
+  input:nth-child(1):checked~div img:nth-child(1),
+  input:nth-child(2):checked~div img:nth-child(2),
+  input:nth-child(3):checked~div img:nth-child(3),
+  input:nth-child(4):checked~div img:nth-child(4),
+  input:nth-child(6):checked~div img:nth-child(6),
+  input:nth-child(5):checked~div img:nth-child(5) {
+    display: block;
+    left: 0px;
+    z-index: 8;
+  }
+
+  div {
+    width: 600px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  footer {
+    position: absolute;
+    z-index: 100;
+    bottom: 10px;
+    left: 500px
+  }
+
+  label {
+    display: inline-block;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 50%;
+    bottom: 10px;
+    width: 5px;
+    height: 5px;
+    background-color: rgb(147, 147, 147)
+  }
+
+  input {
+    display: none;
+  }
+
+  input:nth-child(1):checked~div label:nth-child(1),
+  input:nth-child(2):checked~div label:nth-child(2),
+  input:nth-child(3):checked~div label:nth-child(3),
+  input:nth-child(4):checked~div label:nth-child(4),
+  input:nth-child(6):checked~div label:nth-child(6),
+  input:nth-child(5):checked~div label:nth-child(5) {
+    background-color: rgb(249, 249, 249)
+  }
+</style>
+
+<body>
+  <section>
+    <input type="radio" name="a" id="b1" checked>
+    <input type="radio" name="a" id="b2">
+    <input type="radio" name="a" id="b3">
+    <input type="radio" name="a" id="b4">
+    <input type="radio" name="a" id="b5">
+    <input type="radio" name="a" id="b6">
+    <div>
+      <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9d0f9e0184661354b44381b1920f8c01.jpeg?w=2452&h=920">
+      <img id="a2"
+        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2b6933610dfa42adc25e4adf19ac5450.jpg?thumb=1&w=1533&h=575&f=webp&q=90">
+      <img id="a3"
+        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5084e471aa2554867cd1c9bf333a83e4.jpg?thumb=1&w=1533&h=575&f=webp&q=90">
+      <img id="a4"
+        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/175b22f0032803f8bdbd94590c8c6629.jpeg?thumb=1&w=1533&h=575&f=webp&q=90">
+      <img id="a5"
+        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d2e2db65581b5977e508550ba405c436.jpg?thumb=1&w=1533&h=575&f=webp&q=90">
+      <img id="a6"
+        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/86430f36ae03c99b9f5156544f50efca.jpg?thumb=1&w=1533&h=575&f=webp&q=90">
+      <footer>
+        <label for="b1"></label>
+        <label for="b2"></label>
+        <label for="b3"></label>
+        <label for="b4"></label>
+        <label for="b5"></label>
+        <label for="b6"></label>
+      </footer>
+    </div>
+  </section>
+</body>
+
+</html>

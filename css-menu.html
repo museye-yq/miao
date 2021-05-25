@@ -9,65 +9,49 @@
   <style>
     body {
       margin: 0px;
-
       padding: 0px;
-
     }
-
+    div {
+      background-color: rgb(34, 167, 242);
+    }
     ul {
       margin: 0px;
-
       padding: 0px;
-
       list-style: none;
-
     }
 
-    body>ul>li {
-
+    div>ul>li {
       font-size: 30px;
       display: inline-block;
-
+      padding-left: 30px;
+      padding-right: 30px;
     }
-
     li {
-
       white-space: nowrap;
-
       position: relative;
-
+      background-color: rgb(34, 167, 242);
     }
-
     li:hover {
-
-      background-color: pink;
-
+      background-color:rgb(104,33,122)
     }
 
     ul ul {
-
       position: absolute;
-
       left: 0px;
       top: 100%;
       display: none;
-
     }
-
     ul ul ul {
-
       left: 100%;
       top: 0;
     }
-
     li:hover>ul {
       display: block;
-
     }
   </style>
 </head>
-
 <body>
+<div>
   <ul class="menu">
     <li>小米<ul>
         <li>小米11</li>
@@ -98,6 +82,7 @@
       </ul>
     </li>
   </ul>
+  </div>
 </body>
 
 </html>
