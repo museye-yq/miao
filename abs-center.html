@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+ <style>
+   *{
+    margin: 0px;
+    padding: 0px;
+   }
+  h2 {
+    text-align: center;
+  }
+  .a {
+    border: 3px solid black;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 200px;
+    margin-bottom: 30px;
+  }
+  .a>span {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+    border: 3px solid black;
+  }
+  .b {
+    border:3px solid black;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  .b>span {
+    position: absolute;
+    border:3px solid black;
+    width: 100px;
+    height: 100px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .c {
+    border: 3px solid black;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-bottom: 30px;
+  }
+  .c>span{
+    border: 3px solid black;
+    width: 100px;
+    height: 100px;
+  }
+  table{
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  .d {
+    display: table-cell;
+    width: 200px;
+    height: 200px;
+    border: 3px solid black;
+    text-align: center;
+  }
+  .d>span{
+   display: inline-block;
+    width: 100px;
+    height:100px;
+    border: 3px solid black;
+  }
+  .e {
+    width: 200px;
+    height: 200px;
+    border:  3px solid black;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  .e>span{
+    display: block;
+    width: 100px;
+    height: 100px;
+    border: 3px solid black ;
+    margin: 44px auto;
+  }
+  .f {
+    width:106px;
+    height:106px;
+    border: 3px solid black;
+    margin: 0 auto;
+    padding: 50px;
+
+  }
+  .f>span {
+    display:block;
+    border: 3px solid black;
+    width: 100px;
+    height: 100px;
+  }
+ </style>
+<body>
+  <h2>使用line-height居中</h2>
+  <div class="a">
+    <span></span>
+  </div>
+  <hr>
+  <h2>使用position居中</h2>
+  <div class="b">
+    <span></span>
+  </div>
+  <hr>
+  <h2>使用flex居中</h2>
+  <div class="c">
+    <span></span>
+  </div>
+  <hr>
+  <h2>使用table居中</h2>
+  <table>
+    <td class="d">
+      <span></span>
+    </td>
+  </table>
+  <hr>
+  <h2>使用margin居中</h2>
+  <div class="e">
+    <span></span>
+  </div>
+  <hr>
+  <h2>使用padding居中</h2>
+  <div class="f">
+    <span></span>
+  </div>
+</body>
+</html>

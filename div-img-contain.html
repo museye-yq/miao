@@ -4,42 +4,48 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>div-img-contain.html</title>
+  <title>Document</title>
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    }
+   .a,
+   .b,
+   .c {
+    position: relative; 
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+    box-sizing: border-box;
+    margin: 20px auto;
+   }
+   .a img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+   }
+   .b img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+   }
+   div>.c {
+    background-image: url(https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4139286205,2191525307&fm=26&gp=0.jpg);
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: center;
+   }
+  </style>
 </head>
-<style>
-  .plane {
-    background-image: url(https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=857712049,1290445979&fm=224&gp=0.jpg);
-    background-position: -5px -104px;
-    height: 102px;
-    width: 100px;
-  }
-  .book {
-    background-image: url(https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=857712049,1290445979&fm=224&gp=0.jpg);
-    background-position: -5px 96px;
-    height: 90px;
-    width: 92px;
-  }
-  .clock {
-    height: 90px;
-    width: 90px;
-    background-image: url(https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=857712049,1290445979&fm=224&gp=0.jpg);
-    background-position: 197px -105px ;
-  }
-  .love {
-    height:80px;
-    width:90px;
-    background-image: url(https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1952729755,1029677759&fm=224&gp=0.jpg);
-    background-position: -147px -70px;
-  }
-
-</style>
-
 <body>
-  <div>
-    <div class="plane"></div>
-    <div class="book"></div>
-    <div class="clock"></div>
-    <div class="love"></div>
+ <div>
+   <div class="a"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=64166343,4293999009&fm=26&gp=0.jpg"></div>
+   <div class="b"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3116516863,3473054801&fm=26&gp=0.jpg"></div>
+   <div class="c"></div>
+ </div>
 </body>
-
 </html>
