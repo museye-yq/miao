@@ -257,28 +257,30 @@ var a = Number(prompt('请输入X'))
 
       if (a % 3 == 0) {
         console.log(3)
-
+      }
         if (a % 5 == 0) {
-          console.log(
+          console.log(5)
   }
 
         if (a % 7 == 0) {
           console.log(7)
         }
 
-        if (a % 3 !== 0 && a % 5 !== 0 && a % 7 !== 0) {
+              if (a % 3 !== 0 && a % 5 !== 0 && a % 7 !== 0)
           console.log('n')
-  }
+
 </script>
+
+
 
 <script id="ch0104/10" type="xxx">
 var a = Number(prompt('请输入语文'))
 var b = Number(prompt('请输入数学'))
   
   if ( a < 60 || b < 60 ) {
-    console.log("YES")
+    console.log("1")
   } else {
-    console.log("NO")
+    console.log("0")
   }
 </script>
 
@@ -373,9 +375,9 @@ var c = Number(prompt('请输入c'))
 var a = Number(prompt('请输入年份'))
 
   if ( a % 4 == 0 && a % 400 == 0  ) {
-    console.log("yes")
+    console.log("Y")
   } else {
-    console.log("no")
+    console.log("N")
   }
     
 </script>
@@ -397,33 +399,34 @@ var a = Number(prompt('请输入x'))
 var b = Number(prompt('请输入y'))
 var c = prompt('请输入操作符')
 
- if ( c == "+") {
+  if (c != "+" && c != "-" && c != "/" &&  c != "*") {
+    console.log("Invalid operator!")
+  }
+
+  if ( c == "+") {
     c = a + b
     console.log(c)
- }
+  }
 
- if ( c == "-" ) {
+  if ( c == "-" ) {
     c = a - b 
     console.log(c)
- }
+  }
 
- if ( c == "/" ) {
+  if ( c == "/" ) {
    c = a / b 
    if ( c == 0 ){
      console.log("Divided by zero!")
    }else{
      console.log(c)
    }
- }
+  }
 
- if ( c == "*" ) {
+  if ( c == "*" ) {
     c = a * b 
     console.log(c)
   }
 
-  if (c != "+" && c != "-" && c != "/" &&  c != "*") {
-    console.log("Invalid operator!")
-  }
 </script>
 
 <script id="ch0104/20" type="xxx">
@@ -443,15 +446,13 @@ var c = prompt('请输入操作符')
       x2 = (-b - Math.sqrt ( b * b - 4 * a * c)) / (2*a)
       x1 = x1.toFixed(5)
       x2 = x2.toFixed(5)
-      console.log(x1)
-      console.log(x2)
+      console.log("x1";"x2")
   } else{
     s1 = s1.toFixed(5)
     s2 = s2.toFixed(5)
     x1 = s1 + "+" + s2 + "i"
     x2 = s1 + "-" + s2 + "i"
-     console.log("x1="+x1)
-     console.log("x2="+x2)
+     console.log("x1="+x1 ";" "x2="+x2)
   }
 </script>
 
