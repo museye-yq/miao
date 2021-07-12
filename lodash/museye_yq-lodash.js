@@ -42,7 +42,7 @@ var museye_yq = function () {
   }
 
 
-  function differenceBy(array, values, iteratee) {
+  /*function differenceBy(array, values, iteratee) {
     for (var i = 0; i < array.length; i++) {
       array.splice(i, 1, iteratee(array[i]))
     }
@@ -52,12 +52,12 @@ var museye_yq = function () {
     var result = []
     result = differencr(array, values)
     return result
-  }
+  } */
 
 
-  function differenceWith(array, values, comparator) {
+  /*function differenceWith(array, values, comparator) {
 
-  }
+  } */
 
 
   function drop(array, n) {
