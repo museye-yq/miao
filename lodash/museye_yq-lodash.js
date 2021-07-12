@@ -44,10 +44,10 @@ var museye_yq = function () {
 
   function differenceBy(array, values, iteratee) {
     for (var i = 0; i < array.length; i++) {
-      array.splice(i, 1, iteratee(array[i])
+      array.splice(i, 1, iteratee(array[i]))
     }
     for (var i = 0; i < values.length; i++) {
-      values.splice(i, 1, iteratee(array[i])
+      values.splice(i, 1, iteratee(array[i]))
     }
     var result = []
     result = differencr(array, values)
