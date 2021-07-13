@@ -22,16 +22,17 @@ var museye_yq = function () {
   function compact(array) {
     var result = []
     for (var i = 0; i < array.length; i++) {
-      if (array[i] == false) {
+      if (array[i]) {
+        result.push(array[i])
+      } else {
         continue
       }
-      result.push(array[i])
     }
     return result
   }
 
 
-  function differencr(array, values) {
+  function difference(array, values) {
     var result = []
     for (var i = 0; i < array.length; i++) {
       if (!values.includes(array[i])) {
@@ -95,13 +96,39 @@ var museye_yq = function () {
   }
 
 
+  function flatten() {
+
+  }
+
+
+  function head() {
+    return array[0]
+  }
+
+
+  function indexOf(array, value, fromIndex) {
+    if (fromIndex < 0) {
+      fromIndex = array.length - 1
+    }
+    if (fromIndex == undefined) {
+      fromIndex = 0
+    }
+    for (var i = fromIndex; i < array.length; i++) {
+      if (array[i] == value) {
+        break
+      }
+    }
+    return i
+  }
   return {
     chunk: chunk,
     compact: compact,
-    differencr: differencr,
+    difference: difference,
     differenceBy: differenceBy,
     drop: drop,
     dropRight: dropRight,
     fill: fill,
-}
+    flatten: flatten,
+    head: head,
+    indexOf: indexOf
 }()
