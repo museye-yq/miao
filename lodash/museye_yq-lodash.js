@@ -120,6 +120,23 @@ var museye_yq = function () {
     }
     return i
   }
+
+
+  function initial(array) {
+    if (!array) {
+      return []
+    }
+    array.splice((array.length - 1))
+    return array
+  }
+
+
+  function join(array, separator) {
+    for (var i = 0; i < array.length; i++) {
+      var res = array[i] + separator
+    }
+    return res
+  }
   return {
     chunk: chunk,
     compact: compact,
@@ -130,5 +147,7 @@ var museye_yq = function () {
     fill: fill,
     flatten: flatten,
     head: head,
-    indexOf: indexOf
+    indexOf: indexOf,
+    initial: initial
+  }
 }()
