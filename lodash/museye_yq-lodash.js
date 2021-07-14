@@ -102,24 +102,26 @@ var museye_yq = function () {
   }
 
 
-  function head() {
+  function fromPairs(pairs) {
+    var obj = {}
+    for (var i = 0; i < pairs.length; i++) {
+      obj[pairs[i][0]] = pairs[i][1]
+    }
+    return obj
+  }
+
+
+  function head(array) {
     return array[0]
   }
 
 
-  function indexOf(array, value, fromIndex) {
-    if (fromIndex < 0) {
-      fromIndex = array.length - 1
-    }
-    if (fromIndex == undefined) {
-      fromIndex = 0
-    }
+  function indexOf(array, value, fromIndex = 0) {
     for (var i = fromIndex; i < array.length; i++) {
       if (array[i] == value) {
-        break
+        return i
       }
     }
-    return i
   }
 
 
@@ -147,6 +149,7 @@ var museye_yq = function () {
     dropRight: dropRight,
     fill: fill,
     flatten: flatten,
+    fromPairs: fromPairs,
     head: head,
     indexOf: indexOf,
     initial: initial
