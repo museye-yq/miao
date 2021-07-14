@@ -32,10 +32,11 @@ var museye_yq = function () {
   }
 
 
-  function difference(array, values) {
+  function difference(array, ...values) {
     var result = []
+    var newvalues = [].concat(...values)
     for (var i = 0; i < array.length; i++) {
-      if (!values.includes(array[i])) {
+      if (!newvalues.includes(array[i])) {
         result.push(array[i])
       }
     }
