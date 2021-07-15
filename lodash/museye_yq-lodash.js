@@ -135,10 +135,69 @@ var museye_yq = function () {
 
 
   function join(array, separator) {
+    var res = ''
     for (var i = 0; i < array.length; i++) {
-      var res = array[i] + separator
+      res += array[i]
+      if(i == array.length - 1) {
+        continue
+      } else {
+        res += separator
+      }
     }
     return res
+  }
+
+
+  function last(array) {
+    return array[(array.length - 1)]
+  }
+
+
+  function reverse(array) {
+    var res = []
+    for (var i = array.length - 1; i >= 0; i--) {
+      res.push(array[i])
+    }
+    return res
+  }
+
+
+  function uniq (array) {
+    var set = []
+    for (var i = 0; i < array.length; i++) {
+      if (set.includes(array[i])) {
+        continue
+      } else {
+        set.push(array[i])
+      }
+      }
+      return set
+  }
+
+
+  function unzip(array) {
+    var set = []
+    for (var i = 0; i < array[0].length; i++) {
+      var arr = []
+      for (var j = 0; j < array.length; j++) {
+        arr.push = array[j][i]
+      }
+      set.push(arr)
+    }
+    return set
+  }
+
+
+  function zip (array) {
+    var set = []
+    for (var i = 0; i < array[0].length; i++) {
+      var arr = []
+      for (var j = 0; i < array.length; j++) {
+        arr.push(array[j][i])
+      }
+      set.push(arr)
+    }
+    return set
   }
   return {
     chunk: chunk,
@@ -152,6 +211,11 @@ var museye_yq = function () {
     fromPairs: fromPairs,
     head: head,
     indexOf: indexOf,
-    initial: initial
+    initial: initial,
+    join:join,
+    last:last,
+    reverse:reverse,
+    uniq:uniq,
+    unzip:unzip
   }
 }()
