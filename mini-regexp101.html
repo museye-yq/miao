@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input[type="text"],
+    textarea {
+      width: 300px;
+      height: 100px
+    }
+
+    label {
+      font-family: consolas;
+      cursor: pointer;
+    }
+
+    label input {
+      cursor: pointer;
+    }
+
+    em {
+      background-color: red;
+      font-style: normal;
+    }
+
+    em:nth-of-type(even) {
+      background-color: #d5ebff;
+    }
+
+    section {
+      width: 300px;
+      height: 200px;
+      position: relative;
+    }
+
+    section textarea,
+    section pre {
+      padding: 5px;
+      border: 2px solid;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      font-family: consolas;
+      font-size: 16px;
+      white-space: pre-wrap;
+    }
+
+    section textarea {
+      position: relative;
+      z-index: 8;
+      background-color: transparent;
+    }
+
+    section pre {
+      color: transparent;
+      position: absolute;
+      top: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    请输出正则表达式:
+    <label><input type="checkbox" onclick="run(); " id="ignoreCase">i</label>
+    <label><input type="checkbox" checked onclick="run(); " id="global">g</label>
+    <label><input type="checkbox" onclick="run(); " id="multiline">m</label>
+    <br>
+    <input type="text" id="reg" value='fo.' onkeyup="run()"><br>
+    请输入内容:<br>
+    <section>
+      <pre id="result">
+    </pre>
+      <textarea id="strInput" cols="30" onkeyup="run()" rowe="10">
+foobarbaz aaabbccc
+ddddoofob foa foceeefoofsl lksdjf
+129842 foo
+sd942034 234 lsfowe</textarea>
+      </setion>
+
+  </div>
+  <script>
+    function run() {
+      console.time('run')
+      var regSource = reg.value
+      var flags = getFlags()
+      var re = new RegExp(regSource, flags)
+      console.log(re)
+      var str = strInput.value
+      var match
+      if (re.global) {
+        var resultHTML = ''
+        var lastIndex = re.lastIndex
+        while (match = re.exec(str)) {
+          resultHTML += str.slice(lastIndex, match.index)
+          resultHTML += '<em>' + match[0] + '</em>'
+          lastIndex = re.lastIndex
+          if (match[0]) {
+            resultHTML += str.slice(lastIndex)
+            result.innerHTML = resultHTML
+          } else { // no global 
+            var resultHTML = ''
+            match = re.exec(str)
+            resultHTML += str.slice(0, match.index)
+            resultHTML += '<em>' + match[0] + '</em>'
+            resultHTML += str.slice(match[0].length + macth.index)
+            result.innerHTML = resultHTML
+          }
+          console.timeEnd('run')
+        }
+      }
+    }
+
+    run()
+
+    function getFlags() {
+      var flags = ''
+      if (ignoreCase.checked) {
+        flags += 'i'
+      }
+      if (global.checked) {
+        flags += 'g'
+      }
+      if (multiline.checked) {
+        flags += 'm'
+      }
+      return flags
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+二叉树 binary tree 的定义
+  空
+  一个结点有两颗子树，子数分别也会二叉树
+
+完全二叉树
+  除最后两层以外，从上到下，从左到右所有的结点都有子结点
+满二叉树
+  除最后一层的所有结点都没有子结点(左右子树都为空)，其他所有结点都有两个非空子树
+  对于满二叉树来说，从上往下每层结点数量加倍的，总结点数量一定是2的n次方减一
+
+  最顶层的结点为根结点 root node 
+  没有子结点（两个子结点都为空的）的结点称为叶子结点 leaf node
+  
+  在任意二叉树中，空子树的数量正比非空结点的数量多1
+    因为有N个结点的树，一定有2N个从结点伸出的指针，而除根结点以外每个结点都正好由一个指针指向，于是2n-n+1就得到指向空子树的指针数量
+    即为n+1 所以正好多1 
+
+  二叉树的表示:
+    二叉链表
+      类似链表，但每个结点都可以伸出两个指针
+  树组表示法
+    将二叉的所有空点补满成为一颗满二叉树，然后从上往下从左往右将结点的值放入数组。
+      此种结构根结点在数组的第一项 （下标0）
+      在下标n的结点的两个子结点的位置为2n+1和2n+2
+      下标为m的结点其父结点在floor(m - 1) / 2 位置
+
+
+  function createTreeNode(val) {
+    return {
+      val: val,
+      left: null,
+      right: null
+    }
+  }
+  // 将存储在array中的根结点在rootIdx位置的二叉树转换为二叉链表
+  function arrayToTree(array, rootIdx = 0) {
+     var rootVal = array[roootIdx] //得到根结点的值
+     if (rootVal == null) { //当根结点不存在的时候
+       return null //返回空数组
+     }  
+     var rootNode = createTreeNode(rootVal) //创建新的树根结点
+ 
+    var leftRootIdx = rootIdx * 2 + 1 //左子树
+    var rightRootIdx = rootIdx * 2 + 2 //右子树
+    rootNode.left = arrayToTree(array,leftRootIdx) //得到根结点的左子树
+    rootNode.right = arrayToTree(array,rightRootIdx) //得到根结点的右子树
+
+    return rootNode //结束函数返回rootNode
+  }
+  
+
+  // 将使用二叉链表表示的二叉树存入ary中,其中根结点存入idx位置
+
+  function treeToArray(root, idx = 0, ary = []) {
+    if (root) { //当初始结点不为空时
+    ary[idx] = root.val //ary在0位置时候 赋值初始结点的值
+    treeToArray(root.left, idx * 2 + 1) //将初始结点的左子树加进数组
+    treeToArray(root.right, idx * 2 +  2) //将初始结点的右子树加进数组
+    }
+    return ary //返回数组ary
+  }
+
+
+  function treeToCondensedArray(root) {
+    if (root) { //当root为空数组时
+      return [] //结束函数返回空数组
+    }
+    var nodes = [root] //nodes等于数组root
+    var result = [] //创建一个数组
+    for (var i = 0; i < nodes.length; i++) { //遍历数组nodes
+      var node = nodes[i] //node 等于nodes的第I项
+      if (node) { //当node不为空时
+        result.push(node.val) //新的数组将这个结点的值添加
+        nodes.push(node.left) //数组nodes将添加结点的左子树
+        nodes.push(node.right)//数组nodes将添加结点的右子树
+      } else { 为空的时候
+        result.push(null) //新的数组将添加null
+      }
+    }
+    return result //返回数组
+  }
+
+
+  function cArrayToTree(arr) {
+    if (arr.length == 0) { //当数组的长度为零的时候直接返回空数组
+      return null
+    }
+    var root = createTreeNode(arr[0]) //创造根结点
+    var nodes = [root] //数组添加根结点
+
+    for (var i = 1; i < arr.length; i++) { //从1开始遍历数组
+      var node = nodes.shift() //node得到 删除数组nodes的第一个值并返回
+
+        if(arr[i] == null) { //当arr[i]的值等于null时候
+          node.left = null //结点node的右子树为空
+        } else { //当arr[i]的值不等于null时候
+          node.left = createTreeNode(arr[i]) //创造结点赋值给node的右子树
+          node.push(node.left) //将值添加进node数组
+        }
+
+        i++
+
+        if(arr[i] == null) { //当arr[i]的值等于null时候
+          node.right = null //结点node的右子树为空
+        } else { //当arr[i]的值不等于null时候
+          node.right = createTreeNode(arr[i]) //创造结点赋值给node的右子树
+          node.push(node.right) //将值添加进node数组
+        }
+
+      )
+    }
+    return root 
+  }
+
+
+  funtcion treeToKuoHao(tree) {
+   if(tree){
+     if(!tree.left && !tree.right) {
+       return'' + tree.val
+     }
+   return tree.val + '(' + treeToKuoHao(tree.left) + ')(' + treeToKuoHao(tree.right) + ')'
+   } else {
+     return null
+   }
+ }
+
+
+  //二叉树的遍历
+  // 如果把一本书的章、节、小结一起排序
+  //按看过的顺序，则得到先序遍历序列
+  //按看完的顺序，则得到后序遍历序列
+  //按看了一部分的顺序，则得到中序遍历序列
+
+
+  //先序遍历
+  function preOrderTraverse(root,action) {
+    if (root) {
+      action(root.val)
+      preOrderTraverse(root.left, action)
+      preOrderTraverse(root.right, action)
+    }
+  }
+
+  //中序遍历
+  function inOrderTraverse(root,action) {
+    if (root) {
+      preOrderTraverse(root.left, action)
+      action(root.val)
+      preOrderTraverse(root.right, action)
+    }
+  }
+
+  //后序遍历
+  function postOrderTraverse(root,action) {
+    if (root) {
+      preOrderTraverse(root.left, action)
+      preOrderTraverse(root.right, action)
+      action(root.val)
+    }
+  }
